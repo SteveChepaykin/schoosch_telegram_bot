@@ -36,3 +36,5 @@ class BotSession:
             return 'getHelp'
         if command == 'tutorial':
             return 'getTutorial'
+        if command == 'contact':
+            return 'getContact'
