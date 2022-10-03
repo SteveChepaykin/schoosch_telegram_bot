@@ -32,7 +32,7 @@ def welcome(message):
 
 @bot.message_handler(commands=['login'])
 def getLogin(message):
-    if not (message.chat.id in sessions.keys):
+    if not (message.chat.id in sessions.keys()):
         bot.send_message(message.chat.id, 'Давай начнем с команды /start.')
     else:
         if sessions[message.chat.id].process_command(
@@ -45,7 +45,7 @@ def getLogin(message):
 
 @bot.message_handler(commands=['tutorial'])
 def sendTutorial(message):
-    if not (message.chat.id in sessions.keys):
+    if not (message.chat.id in sessions.keys()):
         bot.send_message(message.chat.id, 'Давай начнем с команды /start.')
     else:
         if sessions[message.chat.id].process_command(
@@ -91,7 +91,7 @@ def answerQuery(call):
 
 @bot.message_handler(commands=['help'])
 def seeHelp(message):
-    if not (message.chat.id in sessions.keys):
+    if not (message.chat.id in sessions.keys()):
         bot.send_message(message.chat.id, 'Давай начнем с команды /start.')
     else:
         if sessions[message.chat.id].process_command('help') == 'getHelp':
@@ -103,7 +103,7 @@ def seeHelp(message):
 
 @bot.message_handler(content_types=['text'])
 def listen(message):
-    if not (message.chat.id in sessions.keys):
+    if not (message.chat.id in sessions.keys()):
         bot.send_message(message.chat.id, 'Давай начнем с команды /start.')
     else:
         res = sessions[message.chat.id].process_command('input',
