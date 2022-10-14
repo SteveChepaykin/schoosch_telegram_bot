@@ -140,7 +140,7 @@ def listen(message):
             )
 
 
-def findPersonLogin(query) -> str | None:
+def findPersonLogin(query):
     data = db.schoosch.people.find_one({
         'firstname': query[1],
         'middlename': query[2],
@@ -153,4 +153,9 @@ def findPersonLogin(query) -> str | None:
     return data['email']
 
 
-bot.polling(non_stop=True)
+bot.run_webhooks(
+    listen='www.chepaykin.org',
+    port=8443,
+    certificate='/home/michep/.ssh/chepaykin_org/certificate.crt',
+    certificate_key='/home/michep/.ssh/chepaykin_org/private.key',
+)

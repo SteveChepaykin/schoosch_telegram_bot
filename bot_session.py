@@ -2,7 +2,7 @@ class BotSession:
     counter: int = 0
     state: str = 'default'
 
-    def process_input(self, input: str, **kwargs) -> str:
+    def process_input(self, input: str) -> str:
         if self.state == 'default':
             self.counter += 1
             if self.counter == 5:
@@ -29,7 +29,7 @@ class BotSession:
 
     def process_command(self, command: str, **kwargs) -> str:
         if command == 'input':
-            return self.process_input(kwargs['input'], kwargs)
+            return self.process_input(kwargs['input'])
         if command == 'login':
             return self.process_login()
         if command == 'help':
