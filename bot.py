@@ -153,9 +153,12 @@ def findPersonLogin(query):
     return data['email']
 
 
-bot.run_webhooks(
-    listen='www.chepaykin.org',
-    port=8443,
-    certificate='/home/michep/.ssh/chepaykin_org/certificate.crt',
-    certificate_key='/home/michep/.ssh/chepaykin_org/private.key',
-)
+# bot.run_webhooks(
+#     listen='0.0.0.0',
+#     port=8443,
+#     ip_address='51.250.22.190',
+#     certificate='/home/michep/.ssh/chepaykin_org/certificate.crt',
+#     certificate_key='/home/michep/.ssh/chepaykin_org/private.key',
+# )
+
+bot.polling(non_stop=True)

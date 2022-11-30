@@ -5,7 +5,7 @@ class BotSession:
     def process_input(self, input: str) -> str:
         if self.state == 'default':
             self.counter += 1
-            if self.counter == 5:
+            if self.counter == 3:
                 self.counter = 0
                 return 'sendHelpReminder'
         elif self.state == 'waitname':
