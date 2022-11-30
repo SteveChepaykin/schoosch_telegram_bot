@@ -1,3 +1,8 @@
 .vscode
 __pycache__
 config.py
+bin/
+lib/
+lib64
+pyvenv.cfg
+share/
